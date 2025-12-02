@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orthros Media - Client Onboarding Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .form-content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .section-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        label {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .required {
+            color: #e74c3c;
+            margin-left: 4px;
+        }
+        
+        .helper-text {
+            font-size: 13px;
+            color: #666;
+            margin-top: 6px;
+            font-style: italic;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .checkbox-group {
+            margin-top: 12px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        
+        .checkbox-item label {
+            margin-bottom: 0;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .privacy-note {
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        @media (max-width: 600px) {
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .form-content {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Welcome to Orthros Media</h1>
+            <p>Let's build your cold email client acquisition system! This form takes about 10 minutes to complete and helps us understand exactly what you need.</p>
+        </div>
+        
+        <form class="form-content" id="onboardingForm">
+            
+            <!-- SECTION 1: COMPANY INFO -->
+            <div class="section">
+                <h2 class="section-title">📋 Company Information</h2>
+                <p class="section-subtitle">Basic details about your business</p>
+                
+                <div class="form-group">
+                    <label for="companyName">Company Name <span class="required">*</span></label>
+                    <input type="text" id="companyName" name="companyName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="websiteUrl">Website URL <span class="required">*</span></label>
+                    <input type="url" id="websiteUrl" name="websiteUrl" placeholder="https://yourcompany.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="yourName">Your Name <span class="required">*</span></label>
+                    <input type="text" id="yourName" name="yourName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="yourTitle">Your Title <span class="required">*</span></label>
+                    <input type="text" id="yourTitle" name="yourTitle" placeholder="e.g., Founder, CEO, VP of Sales" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="companyDescription">Company Description <span class="required">*</span></label>
+                    <textarea id="companyDescription" name="companyDescription" placeholder="Describe what your company does in 1-2 sentences" required></textarea>
+                    <p class="helper-text">Keep it simple - think "elevator pitch"</p>
+                </div>
+            </div>
+            
+            <!-- SECTION 2: IDEAL CUSTOMER PROFILE -->
+            <div class="section">
+                <h2 class="section-title">🎯 Ideal Customer Profile (ICP)</h2>
+                <p class="section-subtitle">Help us understand exactly who we should target</p>
+                
+                <div class="form-group">
+                    <label for="idealCustomer">Who is your ideal customer? <span class="required">*</span></label>
+                    <textarea id="idealCustomer" name="idealCustomer" placeholder="Be as specific as possible. Example: Mid-market SaaS companies with 50-200 employees, $5M-$50M revenue, who need help with customer retention" required></textarea>
+                    <p class="helper-text">The more specific, the better our targeting will be</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="industries">What industries do they work in? <span class="required">*</span></label>
+                    <input type="text" id="industries" name="industries" placeholder="e.g., SaaS, Manufacturing, Healthcare, Professional Services" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="titles">What titles should we target? <span class="required">*</span></label>
+                    <input type="text" id="titles" name="titles" placeholder="e.g., CEO, VP of Sales, Director of Marketing, COO" required>
+                    <p class="helper-text">List the decision-makers we should reach out to</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="companySize">Company size (revenue or employee count)? <span class="required">*</span></label>
+                    <input type="text" id="companySize" name="companySize" placeholder="e.g., $5M-$50M revenue, or 50-200 employees" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="geography">Geographic focus? <span class="required">*</span></label>
+                    <input type="text" id="geography" name="geography" placeholder="e.g., United States only, Northeast US, English-speaking countries" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="avoid">Are there any companies or industries we should AVOID?</label>
+                    <textarea id="avoid" name="avoid" placeholder="List any competitors, industries, or company types we should not target"></textarea>
+                </div>
+            </div>
+            
+            <!-- SECTION 3: OFFER & POSITIONING -->
+            <div class="section">
+                <h2 class="section-title">💼 Offer & Positioning</h2>
+                <p class="section-subtitle">How you help clients and what makes you different</p>
+                
+                <div class="form-group">
+                    <label for="problemSolved">What problem do you solve for clients? <span class="required">*</span></label>
+                    <textarea id="problemSolved" name="problemSolved" placeholder="Example: We help SaaS companies reduce churn by implementing automated customer success workflows" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mainOffer">What's your main offer/service? <span class="required">*</span></label>
+                    <textarea id="mainOffer" name="mainOffer" placeholder="Example: 90-day customer retention program including audit, playbook, and implementation support" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dealSize">What's your typical deal size? <span class="required">*</span></label>
+                    <input type="text" id="dealSize" name="dealSize" placeholder="e.g., $10,000, $25,000, $50,000" required>
+                    <p class="helper-text">This helps us calculate ROI for you</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ltv">What's your average client lifetime value? <span class="required">*</span></label>
+                    <input type="text" id="ltv" name="ltv" placeholder="e.g., $50,000 (if they stay for 2 years at $25K/year)" required>
+                    <p class="helper-text">Include renewals, upsells, referrals if applicable</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="differentiation">What makes you different from competitors? <span class="required">*</span></label>
+                    <textarea id="differentiation" name="differentiation" placeholder="What's your unique value proposition? Why should someone choose you over alternatives?" required></textarea>
+                </div>
+            </div>
+            
+            <!-- SECTION 4: MESSAGING -->
+            <div class="section">
+                <h2 class="section-title">✉️ Messaging Insights</h2>
+                <p class="section-subtitle">Help us craft emails that resonate with your prospects</p>
+                
+                <div class="form-group">
+                    <label for="painPoints">What are your clients' biggest pain points? <span class="required">*</span></label>
+                    <textarea id="painPoints" name="painPoints" placeholder="List 3-5 specific problems your ideal customers are dealing with" required></textarea>
+                    <p class="helper-text">Example: High churn rate, can't predict revenue, spending too much on customer support</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="results">What results have you gotten for past clients?</label>
+                    <textarea id="results" name="results" placeholder="Example: Reduced churn by 35%, increased LTV by $15K per customer, saved 20 hours/week in support time"></textarea>
+                    <p class="helper-text">Specific numbers are gold</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="caseStudies">Do you have any case studies or testimonials?</label>
+                    <textarea id="caseStudies" name="caseStudies" placeholder="Paste links to case studies, or copy/paste a testimonial here"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="avoidMessaging">Any specific messaging we should avoid?</label>
+                    <textarea id="avoidMessaging" name="avoidMessaging" placeholder="Example: Don't mention price in first email, avoid using industry jargon like 'synergy'"></textarea>
+                </div>
+            </div>
+            
+            <!-- SECTION 5: LOGISTICS -->
+            <div class="section">
+                <h2 class="section-title">⚙️ Logistics & Communication</h2>
+                <p class="section-subtitle">How we'll work together</p>
+                
+                <div class="form-group">
+                    <label for="calendarLink">What's your calendar booking link? <span class="required">*</span></label>
+                    <input type="url" id="calendarLink" name="calendarLink" placeholder="https://calendly.com/yourlink or Google Calendar link" required>
+                    <p class="helper-text">This is where we'll book qualified prospects</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="emailAddress">Best email for campaign communications? <span class="required">*</span></label>
+                    <input type="email" id="emailAddress" name="emailAddress" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="communicationPreference">Preferred communication method? <span class="required">*</span></label>
+                    <select id="communicationPreference" name="communicationPreference" required>
+                        <option value="">Select one...</option>
+                        <option value="email">Email</option>
+                        <option value="slack">Slack</option>
+                        <option value="text">Text/SMS</option>
+                        <option value="phone">Phone calls</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="additionalInfo">Anything else we should know?</label>
+                    <textarea id="additionalInfo" name="additionalInfo" placeholder="Any other details, concerns, or requests?"></textarea>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Onboarding Form 🚀</button>
+            
+            <div class="privacy-note">
+                🔒 Your information is secure and will only be used to build your cold email system. We never share client data with third parties.
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('onboardingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect all form data
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // Create a formatted text output
+            let output = '='.repeat(60) + '\n';
+            output += 'ORTHROS MEDIA - CLIENT ONBOARDING FORM SUBMISSION\n';
+            output += '='.repeat(60) + '\n\n';
+            
+            output += '📋 COMPANY INFORMATION\n';
+            output += '-'.repeat(60) + '\n';
+            output += `Company Name: ${data.companyName}\n`;
+            output += `Website: ${data.websiteUrl}\n`;
+            output += `Contact: ${data.yourName} (${data.yourTitle})\n`;
+            output += `Description: ${data.companyDescription}\n\n`;
+            
+            output += '🎯 IDEAL CUSTOMER PROFILE\n';
+            output += '-'.repeat(60) + '\n';
+            output += `Ideal Customer: ${data.idealCustomer}\n`;
+            output += `Industries: ${data.industries}\n`;
+            output += `Target Titles: ${data.titles}\n`;
+            output += `Company Size: ${data.companySize}\n`;
+            output += `Geography: ${data.geography}\n`;
+            output += `Avoid: ${data.avoid || 'N/A'}\n\n`;
+            
+            output += '💼 OFFER & POSITIONING\n';
+            output += '-'.repeat(60) + '\n';
+            output += `Problem Solved: ${data.problemSolved}\n`;
+            output += `Main Offer: ${data.mainOffer}\n`;
+            output += `Deal Size: ${data.dealSize}\n`;
+            output += `LTV: ${data.ltv}\n`;
+            output += `Differentiation: ${data.differentiation}\n\n`;
+            
+            output += '✉️ MESSAGING INSIGHTS\n';
+            output += '-'.repeat(60) + '\n';
+            output += `Pain Points: ${data.painPoints}\n`;
+            output += `Results: ${data.results || 'N/A'}\n`;
+            output += `Case Studies: ${data.caseStudies || 'N/A'}\n`;
+            output += `Avoid Messaging: ${data.avoidMessaging || 'N/A'}\n\n`;
+            
+            output += '⚙️ LOGISTICS\n';
+            output += '-'.repeat(60) + '\n';
+            output += `Calendar Link: ${data.calendarLink}\n`;
+            output += `Email: ${data.emailAddress}\n`;
+            output += `Preferred Communication: ${data.communicationPreference}\n`;
+            output += `Additional Info: ${data.additionalInfo || 'N/A'}\n\n`;
+            
+            output += '='.repeat(60) + '\n';
+            output += 'Submitted: ' + new Date().toLocaleString() + '\n';
+            output += '='.repeat(60);
+            
+            // Download as text file
+            const blob = new Blob([output], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Orthros_Onboarding_${data.companyName.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+            
+            // Show success message
+            alert('✅ Form submitted successfully!\n\nYour responses have been downloaded as a text file.\n\nNext steps:\n1. Send this file to Orthros Media\n2. Schedule your onboarding call\n3. We\'ll start building your system!');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
